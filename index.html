@@ -3,17 +3,35 @@
 <head>
 	<title>Secret Key</title>
 	
-	<!-- Bootstrap CDN -->
-  	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-	<!-- Custom stylesheet -->
-  	<link rel="stylesheet" href="style.css" />
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+  <!-- jQuery plugin -->
+  <script src="../js/jquerycookies/jquery.cookie.js"></script>
 
 </head>
 
+
 <body>
-	<input type="date" /> </input>
-	<input type="time" /> </input>
+  <div class="col-xs-12 header"><h1>Secret key</h1></div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Name:&nbsp<input type="text" id="nameInput" placeholder="Name" size="10"/></input></div></div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Phone:&nbsp<input type="tel" id="phoneInput" placeholder="Phone #" size="10" /></input></div></div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/date-icon.png" height="70" width="70">Date:&nbsp<input type="date" /></input></div></div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/time-icon.png" height="70" width="70">Time:&nbsp<input type="time" /></input></div></div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Number of People:&nbsp<input type="number" min="1" max="100" /></input></div></div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-contentbutton"><input type="button" value="Submit"/></input></div></div>  
 </body>
 
 </html>
