@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html ng-app="datepicker">
+
+<head>
+	<title>Date Picker</title>
+	<!-- Bootstrap CDN -->
+  	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />	
+	<!-- Custom stylesheet -->
+  	<link rel="stylesheet" href="../css/style.css" />
+	<!--jQuery-->
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+</head>
+
+<body ng-controller="dateController">
+	<form id="dateform" ng-submit="addAppt();">
+		<input type="date" id="myDate" ng-model="newDate">
+		<button type="submit">Submit</button>
+	</form>
+	
+	<div class="appointments-wrapper">
+		<div class="col-sm-12" ng-repeat="appt in appointments">
+			{{appt.date}}
+			<button type="submit" ng-click="remove(appt);">Remove</button>
+		</div>
+	</div>
+
+  	<!-- Angular CDN -->
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+  	<!-- Firebase CDN -->
+  	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+  	<!-- AngularFire CDN -->
+  	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+	<script src="datepickerapp.js"></script>
+	
+
+
+
+</body>
+
+</html>
