@@ -2,11 +2,12 @@
 	margin: 2px;
 }
 .header{ 
-  padding-top: 10px;  
+  padding-top: 30px;  
   text-transform: uppercase;
   font-family: 'Univers LT W01 45 Light';
-  border-bottom: solid; 
-  height: 150px;
+  height: 75px;
+  background-image: url('menuheader-04.png');
+  background-size: 289px 100px;
 }
 
 .content { 
@@ -24,11 +25,11 @@
 .content-title {
   font-weight: bold; 
   text-transform: uppercase;
-  font-family: 'Univers LT W01 45 Light';
+  font-family: "Arial", Helvetica, sans-serif;
 }
 
 .inner-content{
-  font-family: 'Univers LT W01 45 Light';
+  font-family: "Arial", Helvetica, sans-serif;
   position: relative; 
   top: 50%;
   margin-top: -35px;
@@ -38,6 +39,38 @@
   position: relative; 
   top: 50%;
   margin-top: -13px;
+}
+
+#menu { 
+	z-index: 10; 
+	position: absolute;
+	background-color: #FFFFFF; 
+	height: 500px;
+	width: 230px; 
+	top: 0px; 
+	left: -230px; 
+	transition: all 1s; 
+}
+
+#menu.active {
+	left: 0px; 
+}
+
+.menu-toggle{
+	height: 100px; 
+	width: 50px; 
+	position: absolute; 
+	right: -50px; 
+}
+
+.inner-menubutton input[type="button"]{
+	width: 100%; 
+	margin: 0; 
+	height: 60px; 
+	text-transform: none;
+	border-radius: 0px; 
+	font-size: 18px;
+	 background-color: #00acc8;
 }
 
 input[type="button"]{
@@ -55,11 +88,15 @@ input[type="button"]{
   border-radius: 2px;
   -webkit-appearance: none;
   clear: both;
-  font: 99% sans-serif
+  font-family: "Arial", Helvetica, sans-serif; 
 }
 
 input[type="button"]:hover {
   background-color: #00acc8;
+}
+
+.inner-menubutton input[type="button"]:hover {
+  background-color:  #bfbfbf;
 }
 
 
