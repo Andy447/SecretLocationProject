@@ -1,6 +1,6 @@
 angular.module("datepicker", ["firebase"])
 	.factory("Appointments", ["$firebase", function($firebase) {
-		var ref = new Firebase("https://secret-key-app.firebaseio.com/");
+		var ref = new Firebase("https://secret-key-app.firebaseio.com/date");
 		return $firebase(ref).$asArray();
 	}])
 
@@ -11,8 +11,6 @@ angular.module("datepicker", ["firebase"])
 		});
 		
 		$scope.addAppt = function () {
-
-			
 			/*if ($scope.appointments.$indexFor("2014-08-27") != -1) {
 				alert("Duplicate!");
 			} else {*/
@@ -41,7 +39,7 @@ angular.module("datepicker", ["firebase"])
 	//---module & controller implementation 3---
 /*	var app = angular.module("datalogic", ["firebase"]);
 	app.controller("dateController", function($scope, $firebase) {
-		var ref = new Firebase("https://secret-key-app.firebaseio.com/");
+		var ref = new Firebase("https://secret-key-app.firebaseio.com/date");
 		var sync = $firebase(ref);
 		$scope.appointments = sync;
 		$scope.addAppt = function () {
@@ -52,7 +50,7 @@ angular.module("datepicker", ["firebase"])
 */
 
 	//---Firebase without Angular---
-/*	var ref = new Firebase("https://secret-key-app.firebaseio.com/");
+/*	var ref = new Firebase("https://secret-key-app.firebaseio.com/date");
 	$('#dateform').submit(function() {
 		var newDate = $('#myDate').val();
 		ref.push({date: newDate});
