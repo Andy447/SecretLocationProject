@@ -2,27 +2,72 @@
 	margin: 2px;
 }
 .header{
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  border: solid; 
-  height: 100px;
+  text-transform: uppercase;
+  font-family: 'Univers LT W01 45 Light';
+  border-bottom: solid; 
+  height: 150px;
 }
 
 .content { 
   text-align: left;
-  font-weight: bold; 
   margin: auto;
   height: 100px;
 }
 
+.content-title {
+  font-weight: bold; 
+  text-transform: uppercase;
+  font-family: 'Univers LT W01 45 Light';
+}
+
 .inner-content{
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: 'Univers LT W01 45 Light';
   position: relative; 
   top: 50%;
   margin-top: -35px;
 }
 
 .inner-contentbutton{
- position: relative; 
+  position: relative; 
   top: 50%;
   margin-top: -13px;
 }
+
+input[type="button"]{
+  margin-top: 10px;
+  background-color: #bfbfbf;
+  color: #FFF;
+  font-size: 12px;
+  padding: 1px 30px 0 30px;
+  height: 30px;
+  line-height: 31px;
+  border: 0;
+  text-transform: uppercase;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  clear: both;
+  font: 99% sans-serif
+}
+
+input[type="button"]:hover {
+  background-color: #00acc8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
