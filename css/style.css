@@ -1,5 +1,5 @@
 .login-logo {
-	margin-top: 70px;
+	margin-top: 110px;
 	margin-bottom: 10px;
 	height: 299px; 
 }
@@ -16,7 +16,7 @@
 }
 
 .wallpapers{
-	width: 100%;
+	width: 746px;
 	height: 800px;
     position: absolute;
     left: 0px;
@@ -27,7 +27,7 @@
 }
 
 .wallpaperb{
-	width: 100%;
+	width: 1280px;
 	height: 800px;
     position: absolute;
     left: 0px;
