@@ -36,66 +36,24 @@
   return false;
   }
   </script>
-
 </head>
 
-
 <body>
-<div id="menu">
-	<input class="menu-toggle" type="image" SRC="images/menu-button.png" ALT="SUBMIT"></input>
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page1','Page8', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6', 'Page7');" value="new arrivals"/></input></div> 
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page2','Page1', 'Page8', 'Page3', 'Page4', 'Page5', 'Page6', 'Page7');" value="womens"/></input></div> 
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page3','Page1', 'Page2', 'Page8', 'Page4', 'Page5', 'Page6', 'Page7');" value="mens"/></input></div>
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page4','Page1', 'Page2', 'Page3', 'Page8', 'Page5', 'Page6', 'Page7');" value="beauty"/></input></div> 
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page5','Page1', 'Page2', 'Page3', 'Page4', 'Page8', 'Page6', 'Page7');" value="eyewear"/></input></div>
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page6','Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page8', 'Page7');" value="exclusive"/></input></div>
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page7','Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6', 'Page8');" value="wishlist"/></input></div>
-	<div class="inner-menubutton"><input type="button" onclick="return show('Page8','Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6', 'Page7');" value="my appointments"/></input></div>	
-</div>
-   <div class="col-xs-12 header"></div>
-   <div id="Page8" class="maincontent"> 	
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMake an appointment</div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Name:&nbsp<input type="text" id="nameInput" placeholder="Name" size="10"/></input></div></div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Phone:&nbsp<input type="tel" id="phoneInput" placeholder="Phone #" size="10" /></input></div></div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/date-icon.png" height="70" width="70">Date:&nbsp<input type="date" /></input></div></div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/time-icon.png" height="70" width="70">Time:&nbsp<input type="time" /></input></div></div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Number of People:&nbsp<input type="number" min="1" max="100" /></input></div></div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content"><div class="inner-contentbutton"><input type="button" value="Submit"/></input></div></div>  
-  </div>
-  
-   <div id="Page1" style="display:none">
-    <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspnew arrivals</div>
-  </div>
-  
-  <div id="Page2" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspwomens</div>
-  </div>
-  
-  <div id="Page3" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspmens</div>
-  </div>
-  
-  <div id="Page4" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspbeauty</div>
-  </div>
-  
-  <div id="Page5" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspeyewear</div>
-  </div>
-  
-  <div id="Page6" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspexclusive</div>
-  </div>
-  
-  <div id="Page7" style="display:none">
-   <div class="content-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspwishlist</div>
-  </div>
-  
-  <script>
-	$(".menu-toggle").click(function() {
-		$("#menu").toggleClass("active");
-	}); 
-  </script>
-</body>
+	<div id="Page1" class="loginPage">
+	<div class="visible-xs-* hidden-sm hidden-md hidden-lg wallpapers"></div>
+	<div class="hidden-xs visible-sm-* visible-md-* visible-lg-* wallpaperb"></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-logo"><center><img src="images/vertical-logo.png" id="Logo" height="299px" width="240px"></img></center></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-content"><center><input type="email" id="emailInput" placeholder="E-MAIL" size="25" /></center></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-content"><center><input type="password" id="passwordInput" placeholder="PASSWORD" size="25" /></center></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 loginButton-content"><div class="inner-contentbutton"><input type="button" value="Submit"/></input></div></div> 
+	</div> 
+	
+	 <div id="Page2" style="display:none">
+	 <div> 
+</body> 
 
-</html>
+<footer>
+</footer> 
+
+</html> 
+
