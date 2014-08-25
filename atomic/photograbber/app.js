@@ -53,17 +53,15 @@ secretLocApp.controller('homeController', function ($scope, $http, $location) {
 			console.log(photos);
 
 			//push photos to Firebase
-			for(var i = 0; i < photos.data.length; i++){
-				photoUrl = photos.data[i].source;
-				photoId = photos.data[i].id;
-				
-				ref.child(photoId).once('value', function(snapshot) {
-					var snapshotId = snapshot.name();
-					if (snapshot.val() === null) {
-						ref.child(snapshotId).set(photoUrl);
+			ref.once('value', function(snapshot) {
+				for(var i = 0; i < photos.data.length; i++){
+					photoUrl = photos.data[i].source;
+					photoId = photos.data[i].id;
+					if (!snapshot.hasChild(photoId)) {
+						ref.child(photoId).set(photoUrl);
 					}
-				});
-			}
+				}
+			});
 		});
 	};
 	
