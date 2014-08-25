@@ -1,3 +1,42 @@
+.loginPage {
+    animation: fadein 5s;
+    -moz-animation: fadein 5s; /* Firefox */
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+    -o-animation: fadein 5s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .login-logo {
 	margin-top: 110px;
 	margin-bottom: 10px;
@@ -26,6 +65,17 @@
 	background-size: 100% 100%;
 }
 
+.wallpapers2{
+	width: 745px;
+	height: 549px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+	background-image: url('homescreen-narrow2.png');
+	background-size: 100% 100%;
+}
+
 .wallpaperb{
 	width: 1280px;
 	height: 800px;
@@ -37,22 +87,43 @@
 	background-size: 100% 100%;
 }
 
+
+.wallpaperb2{
+	width: 1280px;
+	height: 300px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+	background-image: url('content-page-wide-background.png');
+	background-size: 100% 100%;
+}
+
 .content-header{
-    background-image: url('menuheader-04.png');
-	height: 15%;
+	height: 8%;
 	width: 100%;
-	background-color: #FFFFFF; 
+}
+
+.banner {
+	width: 100%; 
+	height: 40px; 
+	line-height: 40px;
+	background-color:#00acc8;
+	color: white; 
+	font-size: 20px; 
+	font-family: "Arial", Helvetica, sans-serif;
 }
 
 footer {
 	position: fixed;
 	bottom: 0; 
-	height: 15%;
+	height: 10%;
 	width: 100%;
 	background-color: #FFFFFF; 
-	z-index: 100;
+	z-index: 99;
     border-top:solid; 
-	border-color:grey; 
+	border-color:grey;
+	border-width: 1px; 
 }
 
 footer button{
@@ -60,7 +131,8 @@ footer button{
 	border: none;
 	color: black; 
 	text-transform: uppercase;
-	font-weight: bold;
+	font-size: 10px;
+	font-weight: bold; 
 }
 
 .header{ 
@@ -79,7 +151,6 @@ footer button{
     vertical-align: middle;
 }
 
-
 .content { 
   text-align: center;
   margin: auto;
@@ -95,13 +166,17 @@ footer button{
 .content3 { 
   text-align: left;
   margin: auto;
-  height: 100px;
+  height: 70px;
 }
 
 
 .content-btn { 
   margin: auto;
   height: 100%;
+}
+
+.superMargin{
+	margin-top: 6px; 
 }
 
 .content-title {
@@ -117,10 +192,15 @@ footer button{
   margin-top: -35px;
 }
 
-.inner-contentbutton{
-  position: relative; 
-  top: 50%;
-  margin-top: -13px;
+.inner-contentbutton button{
+	margin-top: -40px; 
+}
+
+.MakeApp-Wrapper {
+	width: 960px; 
+	height: 100%;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 #menu { 
@@ -154,14 +234,12 @@ footer button{
 	font-size: 18px;
 	 background-color: #00acc8;
 }
-/*
-button {
-  margin-top: 10px;
+
+.maincontent button {
   background-color: #bfbfbf;
   color: #FFF;
   font-size: 12px;
   padding: 1px 30px 0 30px;
-  height: 30px;
   line-height: 31px;
   border: 0;
   text-transform: uppercase;
@@ -172,11 +250,11 @@ button {
   clear: both;
   font-family: "Arial", Helvetica, sans-serif; 
 }
-*/
+
+
 button:hover {
   background-color: #00acc8;
 }
-
 
 .inner-menubutton input[type="button"]:hover {
   background-color:  #bfbfbf;
@@ -198,6 +276,10 @@ button:hover {
 	width:100%;
 	position: relative; 
 }
+.maincontent{
+	background-image: url('content-widescreen2.png');
+	height: 65%;
+}
 
 .main-btn{
   margin: auto;
@@ -214,14 +296,25 @@ button:hover {
 
 #slider2{
   margin: auto;
-  position: absolute;
-  top: 0; 
-  left: 0; 
-  bottom: 0; 
-  right: 0;
+
+ }
+ 
+ 
+#like-btn {
+	height: 70px;
+	width: 100%;
+	background-color: #FFFFFF; 
 }
-
-
+  
+#like-btn button{
+	width: 70px; 
+	height: 70px; 
+	background-repeat: no-repeat;
+	background: url("like-icon.png");
+	background-size: 70px 70px;
+	z-index: 100;
+	border: none; 
+}
 
 
 

@@ -47,10 +47,10 @@
     fx:'scrollLeft',
 	next:'.slider', 
 	speed: 500, 
-	timeout: 0
+	timeout: 0,
 	});
 });;
-
+/*
 jQuery(function($){
 var windowWidth = $(window).width();
 
@@ -60,15 +60,19 @@ $(window).resize(function() {
     return;
     }
 });
-});
+}); */
   </script>
   
 </head>
-<body>
-<div class="content-header">
 
+<body>
+<div class="loginPage">
+<div class="content-header">
+<div class="visible-xs-* hidden-sm hidden-md hidden-lg wallpapers2"></div>
+<div class="hidden-xs visible-sm-* visible-md-* visible-lg-* wallpaperb2"></div>
 </div>
-<div id="Page1" class="maincontent" style="height: 70%" >
+<div id="Page1" class="maincontent">
+	<div class="banner">&nbsp&nbspgallery</div> 
 	<div class="hidden-xs col-sm-12 col-sm-offset-2 col-md-12 col-md-offset-3 col-lg-6 col-lg-offset-3 slider" id="slider1" style="height: 100%">
 		   <img src="http://image.rakuten.co.jp/kidsmio/cabinet/setup/su-chi6-1.jpg" width="670" height="670" />
            <img src="http://image.rakuten.co.jp/kidsmio/cabinet/tops/longtop/top2/t-tim30-1.jpg?_ex=128x128" width="670" height="670" />
@@ -79,35 +83,45 @@ $(window).resize(function() {
            <img src="http://image.rakuten.co.jp/kidsmio/cabinet/tops/longtop/top2/t-tim30-1.jpg?_ex=128x128" width="100%" height="100%" />
            <img src="http://image.rakuten.co.jp/kidsmio/cabinet/denim/harfbottoms/b-e21-1.jpg" width="" height="100%" />
 	</div>
+<div id="like-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider"><center><button type"Submit" ></button></center></div>
 </div>
 
-<div id="Page2" style="display:none">
-<center><b>Dates</b></center>
+<div id="Page2" class="maincontent" style="display:none">
+	<div class="banner">&nbsp&nbspmy dates</div> 
+	<center><b>Dates</b></center>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-btn"><center><button onclick="return show('Page5','Page1', 'Page2' , 'Page3', 'Page4');">Create New Date</button></center></div>
 </div> 
 
-<div id="Page3" style="display:none">
-<center><b>My Wishlist</b></center>
+<div id="Page5" class="maincontent" style="display:none">
+	<div class="banner">&nbsp&nbspbook a date</div> 
+	<div class="MakeApp-Wrapper">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3"><div class="inner-content"><img src="images/name-icon.png" height="70" width="70">Name:&nbsp<input type="text" id="nameInput" placeholder="Name" size="10"/></input></div></div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3"><div class="inner-content"><img src="images/phone-icon.png" height="70" width="70">Phone:&nbsp<input type="tel" id="phoneInput" placeholder="Phone #" size="10" /></input></div></div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3"><div class="inner-content"><img src="images/date-icon.png" height="70" width="70">Date:&nbsp<input type="date" /></input></div></div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3"><div class="inner-content"><img src="images/time-icon.png" height="70" width="70">Time:&nbsp<input type="time" /></input></div></div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3"><div class="inner-content"><img src="images/people-icon.png" height="70" width="70">Number of People:&nbsp<input type="number" min="1" max="100" /></input></div></div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content3"><div class="superMargin"><button type="Submit">Submit</button></div></div>   
+	</div>
+</div>  
+
+<div id="Page3" class="maincontent" style="display:none">
+	<div class="banner">&nbsp&nbspmy wishlist</div> 
+	<center><b>My Wishlist</b></center>
 </div> 
 
-<div id="Page4" style="display:none">
-<center><b>Settings</b></center>
+<div id="Page4" class="maincontent" style="display:none">
+	<div class="banner">&nbsp&nbspsettings</div> 
+	<center><b>Settings</b></center>
 </div> 
 
 </body> 
 
 <footer>
-<!--<div id="Page1"> 
-<div style="height:50%">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-btn"><center><button class="main-btn" style="width: 100%" onclick="">Like</button></center></div>
-</div>
-<div style="height:50%; border-top: solid;">-->
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page1','Page2', 'Page3' , 'Page4');">gallery</button></center></div>
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page2','Page1', 'Page3' , 'Page4');">dates</button></center></div>
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page3','Page1', 'Page2' , 'Page4');">wishlist</button></center></div>
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page4','Page1', 'Page2' , 'Page3');">settings</button></center></div>
-<!--</div>
-</div> -->
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page1','Page2', 'Page3' , 'Page4', 'Page5');">gallery</button></center></div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page2','Page1', 'Page3' , 'Page4', 'Page5');">dates</button></center></div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page3','Page1', 'Page2' , 'Page4', 'Page5');">wishlist</button></center></div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn"><center><button class="main-btn" style="width: 100%" onclick="return show('Page4','Page1', 'Page2' , 'Page3', 'Page5');">settings</button></center></div>
 </footer>
-
+</div>
 
 </html> 
