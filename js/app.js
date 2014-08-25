@@ -21,18 +21,20 @@ secretApp.config(function($routeProvider) {
 secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $location) {
 	var ref = new Firebase("https://secret-key-app.firebaseio.com/login");
 	var authClient = new FirebaseSimpleLogin(ref, function(error, user) {
-		console.log(arguments);
-		if (error !== null) {
-			console.log("Login error:", error);
-		} else if (user !== null) {
-			console.log("User authenticated with Firebase:", user);
-			$location.path('/view');
-		} else {
-			console.log("User is logged out");
-		}
+		$scope.$apply(function() {
+			console.log(arguments);
+			if (error !== null) {
+				console.log("Login error:", error);
+			} else if (user !== null) {
+				console.log("User authenticated with Firebase:", user);
+				$location.path('/view');
+			} else {
+				console.log("User is logged out");
+			}
+		});
 	});
 
-	$scope.login = function () {
+	$scope.login = function() {
 		authClient.createUser($scope.emailInput, $scope.passwordInput, function(error) {
 
 			if (error !== null) {
@@ -40,27 +42,37 @@ secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $
 				if (error.code === "EMAIL_TAKEN") { //login
 					authClient
 						.login("password", {email: $scope.emailInput, password: $scope.passwordInput})
-						.then(function(user) { $location.path('/view'); }, 
+						.then(function(user) {
+								$scope.$apply(function() {
+									$location.path('/view');
+								});
+							}, 
 							function(error) {
-								if (error.code === "INVALID_PASSWORD") {
-									console.log("This was an invalid password");
-									alert("Invalid password!");
-									$scope.emailInput = $scope.passwordInput = "";
-								}
+								$scope.$apply(function() {
+									if (error.code === "INVALID_PASSWORD") {
+										console.log("This was an invalid password");
+										alert("Invalid password!");
+										$scope.passwordInput = "";
+									}
+								});
 							}
 						)
 				} else if (error.code === "INVALID_PASSWORD") {
-					console.log("This was an invalid password");
-					alert("Invalid password!");
-					$scope.emailInput = $scope.passwordInput = "";
+					$scope.$apply(function() {
+						console.log("This was an invalid password");
+						alert("Invalid password!");
+						$scope.passwordInput = "";
+					});
 				}
 			} else { //registration
-				authClient
-					.login("password", {email: $scope.emailInput, password: $scope.passwordInput})
-					.then(function(user) {
-						ref.child(user.id).set({email: $scope.emailInput});
-					})
-				$location.path('/view');
+				$scope.$apply(function() {
+					authClient
+						.login("password", {email: $scope.emailInput, password: $scope.passwordInput})
+						.then(function(user) {
+							ref.child(user.id).set({email: $scope.emailInput});
+						})
+					$location.path('/view');
+				});
 			}
 		});
 	}
