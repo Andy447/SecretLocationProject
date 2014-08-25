@@ -1,6 +1,6 @@
 angular.module("datepicker", ["firebase"])
 	.factory("Appointments", ["$firebase", function($firebase) {
-		var ref = new Firebase("https://secret-key-app.firebaseio.com/date");
+		var ref = new Firebase("https://secret-key-app.firebaseio.com/photos");
 		return $firebase(ref).$asArray();
 	}])
 

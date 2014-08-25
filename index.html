@@ -1,59 +1,41 @@
-<html>
+<!DOCTYPE HTML>
+<html ng-app="secretkeyapp">
 
 <head>
-	<title>Secret Key</title>
-	 <link rel="icon" 
+	<title>Secret Key App</title>
+	<link rel="icon" 
       type="image/png" 
       href="./images/h.png">
-
-	
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-   <!-- JS -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  
-  <!-- Optional theme -->
+	<!-- Bootstrap CDN -->
+  	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Optional theme -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-  <!-- Latest compiled and minified JavaScript -->
+	<!-- Our Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Latest compiled and minified JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- Angular CDN -->
+  	<script src="js/angular.js"></script>
+	<!-- Angular ngRoute -->
+	<script src="js/angular-route.js"></script>
+  	<!-- Firebase CDN -->
+  	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+  	<!-- AngularFire CDN -->
+  	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+	<!-- Firebase Simple Login -->
+	<script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script>
+	<!-- Custom JS -->	
+	<script src="js/app.js"></script>
 
-  <!-- Our Custom CSS -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
 	
-  <!-- Page Switching Script-->
-  <script>
-  function show(shown, hidden1, hidden2, hidden3, hidden4, hidden5, hidden6, hidden7) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden1).style.display='none';
-  document.getElementById(hidden2).style.display='none';
-  document.getElementById(hidden3).style.display='none';
-  document.getElementById(hidden4).style.display='none';
-  document.getElementById(hidden5).style.display='none';
-  document.getElementById(hidden6).style.display='none';
-  document.getElementById(hidden7).style.display='none';
-  return false;
-  }
-  </script>
 </head>
 
 <body>
-	<div id="Page1" class="loginPage">
-	<div class="visible-xs-* hidden-sm hidden-md hidden-lg wallpapers"></div>
-	<div class="hidden-xs visible-sm-* visible-md-* visible-lg-* wallpaperb"></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-logo"><center><img src="images/vertical-logo.png" id="Logo" height="299px" width="240px"></img></center></div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-content"><center><input type="email" id="emailInput" placeholder="E-MAIL" size="25" /></center></div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 login-content"><center><input type="password" id="passwordInput" placeholder="PASSWORD" size="25" /></center></div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 loginButton-content"><div class="inner-contentbutton"><input type="button" value="Submit"/></input></div></div> 
-	</div> 
 	
-	 <div id="Page2" style="display:none">
-	 <div> 
-</body> 
+	<div ng-view></div>
+	
+</body>
 
-<footer>
-</footer> 
-
-</html> 
-
+</html>
