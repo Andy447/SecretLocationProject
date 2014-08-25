@@ -37,6 +37,30 @@
 	background-size: 100% 100%;
 }
 
+.content-header{
+    background-image: url('menuheader-04.png');
+	height: 15%;
+	width: 100%;
+	background-color: #FFFFFF; 
+}
+
+footer {
+	position: fixed;
+	bottom: 0; 
+	height: 15%;
+	width: 100%;
+	background-color: #FFFFFF; 
+	z-index: 100;
+	border-color: grey; 
+}
+
+footer button{
+	background-color: #FFFFFF;
+	border: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
 .header{ 
   padding-top: 30px;  
   text-transform: uppercase;
@@ -64,6 +88,11 @@
   text-align: left;
   margin: auto;
   height: 30px;
+}
+
+.content-btn { 
+  margin: auto;
+  height: 100%;
 }
 
 .content-title {
@@ -142,6 +171,47 @@ button:hover {
 .inner-menubutton input[type="button"]:hover {
   background-color:  #bfbfbf;
 }
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden; 
+	position: relative; 
+}
+
+.swipe-wrap {
+	overflow: hidden;
+	position: relative; 
+}
+
+.swipe-wrap > div{
+	float:left;
+	width:100%;
+	position: relative; 
+}
+
+.main-btn{
+  margin: auto;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+}
+
+#slider1{
+	height: 100%; 
+}
+
+#slider2{
+  margin: auto;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+}
+
+
 
 
 
