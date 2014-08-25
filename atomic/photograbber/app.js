@@ -24,6 +24,8 @@ secretLocApp.controller('usersController', function($scope) {});
 secretLocApp.controller('appointmentsController', function($scope) {});
 
 secretLocApp.controller('homeController', function ($scope, $http, $location) {
+
+	//--------Users and Appointments routing-----
     $scope.goUsers = function() {
 		$location.path('/users');
 	}
@@ -31,8 +33,12 @@ secretLocApp.controller('homeController', function ($scope, $http, $location) {
 	$scope.goAppointments = function() {
 		$location.path('/appointments');
 	}
+	
+	//--------Set up Firebase ref-----------------
+	var ref = new Firebase("https://secret-key-app.firebaseio.com/photos");
 
-    //App ID
+	
+    //--------Grab photos from Facebook-------
     var fbID = 675427939218868;
 
 	window.fbAsyncInit = function() {
@@ -45,22 +51,33 @@ secretLocApp.controller('homeController', function ($scope, $http, $location) {
 		console.log('getting Album');
 		FB.api("/530901206937986/photos", function (photos) {
 			console.log(photos);
-			//FB api returns JSON array of photos. 
-			//Loop through array, adding new photos to DB. 
-			//Compares picture URL's to avoid duplicates.
 
+			//push photos to Firebase
 			for(var i = 0; i < photos.data.length; i++){
-				console.log(photos.data[i].source);
+				photoUrl = photos.data[i].source;
+				photoId = photos.data[i].id;
+				
+				ref.child(photoId).once('value', function(snapshot) {
+					var snapshotId = snapshot.name();
+					if (snapshot.val() === null) {
+						ref.child(snapshotId).set(photoUrl);
+					}
+				});
 			}
 		});
 	};
 	
-	// Load the SDK Asynchronously
+	//load FB SDK
     (function(d){
       var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
       js = d.createElement('script'); js.id = id; js.async = true;
       js.src = "//connect.facebook.net/en_US/all.js";
       d.getElementsByTagName('head')[0].appendChild(js);
     }(document));
+
+	
+		
+	
+	
 });
 
