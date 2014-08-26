@@ -17,12 +17,20 @@
 	<div id="Page1" class="maincontent">
 		<div class="banner">&nbsp&nbspgallery</div> 
 		<div class="hidden-xs col-sm-12 col-sm-offset-2 col-md-12 col-md-offset-3 col-lg-6 col-lg-offset-3 slider" id="slider1" style="height: 100%">
-			<img src={{currentPhoto}} width="670" height="670" />
+			<form ng-submit="dislike();">
+				<div class="galleryImage" style="background-image:url({{currentPhoto}})">
+					<button class="nextButton" type="submit"></button>
+				</div>
+			</form>
 		</div>
-		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
-			   <img src={{currentPhoto}} width="100%" height="100%" />
+<!--		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
+			<form ng-submit="dislike();">
+				<div class="smallerImage" style="background-image:url({{currentPhoto}})">
+					<button class="nextButton" type="submit"></button>
+				</div>
+			</form>
 		</div>
-		<form ng-submit="like();">
+-->		<form ng-submit="like();">
 			<div id="like-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider">
 				<center><button type="submit" ></button></center>
 			</div>
@@ -84,14 +92,12 @@
 	<div id="Page3" class="maincontent" style="display:none">
 		<div class="banner">&nbsp&nbspmy wishlist</div> 
 		<center><b>My Wishlist</b></center>
-		<div ng-repeat="photo in userFavourites">
+		<div class="albumWrapper" ng-repeat="photo in userFavourites">
 			<div class="photoWrapper">
-				<img src={{photo.$value}} />
-				<div class="deleteButton">
-					<form>
-						<button type="submit" class="btn btn-default">X</button>
-					</form>
-				</div>
+				<img class="wishlistPhoto" src={{photo.$value}} />
+				<form ng-submit="deletePhoto(photo);">
+					<button type="submit" class="deleteButton">X</button>
+				</form>
 			</div>
 		</div>
 	</div>
