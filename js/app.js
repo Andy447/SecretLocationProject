@@ -36,39 +36,24 @@ secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $
 	});
 
 	$scope.login = function() {
-		authClient.createUser($scope.emailInput, $scope.passwordInput, function(error) {
+		authClient.createUser($scope.emailInput, $scope.emailInput, function(error) {
 
 			if (error !== null) {
 				console.log(error);
 				if (error.code === "EMAIL_TAKEN") { //login
 					authClient
-						.login("password", {email: $scope.emailInput, password: $scope.passwordInput})
+						.login("password", {email: $scope.emailInput, password: $scope.emailInput})
 						.then(function(user) {
 								$scope.$apply(function() {
 									$location.path('/view');
 								});
-							}, 
-							function(error) {
-								$scope.$apply(function() {
-									if (error.code === "INVALID_PASSWORD") {
-										console.log("This was an invalid password");
-										alert("Invalid password!");
-										$scope.passwordInput = "";
-									}
-								});
-							}
+							} 
 						)
-				} else if (error.code === "INVALID_PASSWORD") {
-					$scope.$apply(function() {
-						console.log("This was an invalid password");
-						alert("Invalid password!");
-						$scope.passwordInput = "";
-					});
 				}
 			} else { //registration
 				$scope.$apply(function() {
 					authClient
-						.login("password", {email: $scope.emailInput, password: $scope.passwordInput})
+						.login("password", {email: $scope.emailInput, password: $scope.emailInput})
 						.then(function(user) {
 							ref.child(user.id).set({email: $scope.emailInput, index: 0});
 						})
@@ -83,6 +68,13 @@ secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $
 
 //--------view Controller---------------
 secretApp.controller('viewController', function($scope, $firebase, $firebaseSimpleLogin, $location) {	
+	$scope.show = function(shown, hidden1, hidden2) {
+		document.getElementById(shown).style.display='block';
+		document.getElementById(hidden1).style.display='none';
+		document.getElementById(hidden2).style.display='none';
+		return false;
+	}
+
 	var photoRef = new Firebase("https://secret-key-app.firebaseio.com/photos");
 	var photoArray = $firebase(photoRef).$asArray();
 
@@ -122,6 +114,11 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 					ref.child(user.id).child('index').set(userIndex + 1);
 					initUser(user);
 				}
+
+				$scope.deletePhoto = function(photo) {
+					ref.child(user.id).child('favourites').child(photo.$id).set(null);
+				}
+					
 			//*******end of exception handler
 				
 		});
