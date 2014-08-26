@@ -13,15 +13,37 @@ secretLocApp.config(function($routeProvider) {
 			templateUrl: 'users.html',
 			controller: 'usersController'
 		})
-		.when('/calendar', {
+		.when('/appointments', {
 			templateUrl: 'appointments.html',
 			controller: 'appointmentsController'
 		})	
 });
 
-secretLocApp.controller('usersController', function($scope) {});
+secretLocApp.controller('usersController', function($scope, $firebase, $location) {
+	var ref = new Firebase("https://secret-key-app.firebaseio.com/login");
+	var userArray = $firebase(ref).$asArray();
+	userArray.$loaded().then(function() {
+		$scope.userArray = userArray;
+	});
 
-secretLocApp.controller('appointmentsController', function($scope) {});
+	$scope.back = function() {
+		$location.path('/');
+	}
+});
+
+secretLocApp.controller('appointmentsController', function($scope, $firebase, $location) {
+	var ref = new Firebase("https://secret-key-app.firebaseio.com/allBookings");
+	var apptArray = $firebase(ref).$asArray();
+	apptArray.$loaded().then(function() {
+		$scope.apptArray = apptArray;
+
+		console.log(apptArray[0]);
+	});
+
+	$scope.back = function() {
+		$location.path('/');
+	}
+});
 
 secretLocApp.controller('homeController', function ($scope, $http, $location) {
 

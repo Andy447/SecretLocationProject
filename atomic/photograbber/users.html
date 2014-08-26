@@ -1,1 +1,10 @@
-Hi I'm the users page
+<form ng-submit="back();">
+	<button type="submit">BACK</button>
+</form>
+
+<div ng-repeat="user in userArray">
+	<button>{{user.email}}</button>
+	<div class="photoBlock" ng-repeat="photo in user.favourites">
+		<img src={{photo}} />
+	</div>
+</div>

@@ -82,9 +82,7 @@ secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $
 
 
 //--------view Controller---------------
-secretApp.controller('viewController', function($scope, $firebase, $firebaseSimpleLogin, $location) {
-	console.log("I'm on the view page");
-	
+secretApp.controller('viewController', function($scope, $firebase, $firebaseSimpleLogin, $location) {	
 	var photoRef = new Firebase("https://secret-key-app.firebaseio.com/photos");
 	var photoArray = $firebase(photoRef).$asArray();
 
@@ -102,37 +100,81 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 	});
 	
 	var initUser = function(user) {
+		console.log(user);
 		var userIndexObj = $firebase(ref.child(user.id).child('index')).$asObject();
 		userIndexObj.$loaded().then(function() {
 			var userIndex = userIndexObj.$value;
 			console.log(userIndex);
-			var photo = photoArray[userIndex];
 
-			$scope.currentPhoto = photo.$value;
-			console.log($scope.currentPhoto);
+			//******handle exception if userIndex >=25
+				var photo = photoArray[userIndex];
 
-			$scope.like = function() {
-				ref.child(user.id).child('favourites').child(photo.$id).set(photo.$value);
-				ref.child(user.id).child('index').set(userIndex + 1);
-				initUser(user);
-			}
+				$scope.currentPhoto = photo.$value;
+				console.log($scope.currentPhoto);
 
-			$scope.dislike = function() {
-				ref.child(user.id).child('index').set(userIndex + 1);
-				initUser(user);
+				$scope.like = function() {
+					ref.child(user.id).child('favourites').child(photo.$id).set(photo.$value);
+					ref.child(user.id).child('index').set(userIndex + 1);
+					initUser(user);
+				}
+
+				$scope.dislike = function() {
+					ref.child(user.id).child('index').set(userIndex + 1);
+					initUser(user);
+				}
+			//*******end of exception handler
+				
+		});
+
+		var userFavourites = $firebase(ref.child(user.id).child('favourites')).$asArray();
+		userFavourites.$loaded().then(function() {
+			$scope.userFavourites = userFavourites;
+			for (var i = 0; i < userFavourites.length; i++) {
+				console.log(i, userFavourites[i].$value);
 			}
 		});
-	}
 
+		var userBookings = $firebase(ref.child(user.id).child('bookings')).$asArray();
+		userBookings.$loaded().then(function() {
+			$scope.userBookings = userBookings;
+
+			var bookingsRef = new Firebase("https://secret-key-app.firebaseio.com/allBookings");
+			var appointments = $firebase(bookingsRef).$asArray();
+			appointments.$loaded().then(function() {
+				$scope.appointments = appointments;
+
+				$scope.book = function() {
+					var appointment = {
+						name: $scope.newName,
+						phone: $scope.newPhone,
+						partySize: $scope.newPartySize,
+						email: user.email,
+						date: $scope.newDate,
+						time: $scope.newTime
+					};
+
+					bookingsRef.once('value', function(snapshot) {
+						//check for appointment conflict in between hours
+						if(!snapshot.hasChild($scope.newDate) || !snapshot.child($scope.newDate).child(time).hasChild($scope.newTime)) {
+							$scope.userBookings.$add(appointment);
+							bookingsRef.child($scope.newDate).set({time: $scope.newTime, appointment: appointment});
+							$scope.newPartySize = $scope.newDate = $scope.newTime = "";
+						} else {
+							alert("Booking time conflict!");
+							$scope.newPartySize = $scope.newDate = $scope.newTime = "";
+						}
+					});
+				}
+			});
+		});
+	}
 
 	$scope.logout = function () {
 		authClient.logout();
 		console.log("User is logged out");
 		$location.path('/');
 	}
-
 });
-
 
 
 
