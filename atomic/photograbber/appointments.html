@@ -1,1 +1,16 @@
-Hi I'm the appointments page
+<form ng-submit="back();">
+	<button type="submit">BACK</button>
+</form>
+
+
+<div ng-repeat="appt in apptArray">
+	<div class="singleAppt">
+		Date: {{appt.$id}}<br/>
+		Time: {{appt.time}}<br/>
+		Name: {{appt.appointment.name}}<br/>
+		Phone: {{appt.appointment.phone}}<br/>
+		Email: {{appt.appointment.email}}<br/>
+		Party Size: {{appt.appointment.partySize}}<br/>
+	</div>
+</div>
+
