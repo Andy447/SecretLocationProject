@@ -83,6 +83,13 @@ secretApp.controller('loginController', function($scope, $firebaseSimpleLogin, $
 
 //--------view Controller---------------
 secretApp.controller('viewController', function($scope, $firebase, $firebaseSimpleLogin, $location) {	
+	$scope.show = function(shown, hidden1, hidden2) {
+		document.getElementById(shown).style.display='block';
+		document.getElementById(hidden1).style.display='none';
+		document.getElementById(hidden2).style.display='none';
+		return false;
+	}
+
 	var photoRef = new Firebase("https://secret-key-app.firebaseio.com/photos");
 	var photoArray = $firebase(photoRef).$asArray();
 

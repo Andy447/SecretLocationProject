@@ -1,39 +1,12 @@
 
   <!-- Page Function -->
   <script>
-  function show(shown, hidden1, hidden2, hidden3, hidden4, hidden5, hidden6, hidden7) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden1).style.display='none';
-  document.getElementById(hidden2).style.display='none';
-  document.getElementById(hidden3).style.display='none';
-  document.getElementById(hidden4).style.display='none';
-  document.getElementById(hidden5).style.display='none';
-  document.getElementById(hidden6).style.display='none';
-  document.getElementById(hidden7).style.display='none';
-  return false;
+  function show(shown, hidden1, hidden2) {
+	  document.getElementById(shown).style.display='block';
+	  document.getElementById(hidden1).style.display='none';
+	  document.getElementById(hidden2).style.display='none';
+	  return false;
   }
-  </script>
-  
-  <script>
-  $(document).ready(function() {
-  $('.slider').cycle({
-    fx:'scrollLeft',
-	next:'.slider', 
-	speed: 500, 
-	timeout: 0,
-	});
-});;
-/*
-jQuery(function($){
-var windowWidth = $(window).width();
-
-$(window).resize(function() {
-    if(windowWidth != $(window).width()){
-    location.reload();
-    return;
-    }
-});
-}); */
   </script>
 
 <body>
@@ -44,7 +17,7 @@ $(window).resize(function() {
 	<div id="Page1" class="maincontent">
 		<div class="banner">&nbsp&nbspgallery</div> 
 		<div class="hidden-xs col-sm-12 col-sm-offset-2 col-md-12 col-md-offset-3 col-lg-6 col-lg-offset-3 slider" id="slider1" style="height: 100%">
-			   <img src={{currentPhoto}} width="670" height="670" />
+			<img src={{currentPhoto}} width="670" height="670" />
 		</div>
 		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
 			   <img src={{currentPhoto}} width="100%" height="100%" />
@@ -112,7 +85,14 @@ $(window).resize(function() {
 		<div class="banner">&nbsp&nbspmy wishlist</div> 
 		<center><b>My Wishlist</b></center>
 		<div ng-repeat="photo in userFavourites">
-			<img src={{photo.$value}} />
+			<div class="photoWrapper">
+				<img src={{photo.$value}} />
+				<div class="deleteButton">
+					<form>
+						<button type="submit" class="btn btn-default">X</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 
