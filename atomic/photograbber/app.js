@@ -85,21 +85,26 @@ secretLocApp.controller('homeController', function ($scope, $http, $location) {
 			version    : 'v2.0'
 		});
 
-		console.log('getting Album');
-		FB.api("/530901206937986/photos", function (photos) {
-			console.log(photos);
 
-			//push photos to Firebase
-			ref.once('value', function(snapshot) {
-				for(var i = 0; i < photos.data.length; i++){
-					photoUrl = photos.data[i].source;
-					photoId = photos.data[i].id;
-					if (!snapshot.hasChild(photoId)) {
-						ref.child(photoId).set(photoUrl);
-					}
+		var fetchPhotos = function(url) {
+			FB.api(url, function (photos) {
+				if (photos.paging.next) {
+					fetchPhotos(photos.paging.next);
 				}
+				//push photos to Firebase
+				ref.once('value', function(snapshot) {
+					for(var i = 0; i < photos.data.length; i++){
+						photoUrl = photos.data[i].source;
+						photoId = photos.data[i].id;
+						if (!snapshot.hasChild(photoId)) {
+							ref.child(photoId).set(photoUrl);
+						}
+					}
+				});
 			});
-		});
+		};
+	
+		fetchPhotos("/530901206937986/photos");
 	};
 	
 	//load FB SDK
