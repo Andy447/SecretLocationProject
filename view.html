@@ -24,23 +24,25 @@
 	</div>
 	<div id="Page1" class="maincontent">
 		<div class="loginPage">
-		<div class="hidden-xs col-sm-12 col-sm-offset-2 col-md-12 col-md-offset-3 col-lg-6 col-lg-offset-3 slider" id="slider1" style="height: 100%">
+		<div class="hidden-xs hidden-sm col-md-12 col-md-offset-3 col-lg-6 col-lg-offset-3 slider" id="slider1" style="height: 100%">
 			<form ng-submit="dislike();">
 				<div class="galleryImage" style="background-image:url({{currentPhoto}})">
 					<button class="nextButton" type="submit"></button>
 				</div>
 			</form>
 		</div>
-		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
+		<div class=" col-sx-12 col-sm-12 hidden-md hidden-lg slider" id="slider2" style="height: 257px; width: 257px;">
 			<form ng-submit="dislike();">
 				<div class="smallerImage" style="background-image:url({{currentPhoto}})">
 					<button class="nextButton" type="submit"></button>
 				</div>
 			</form>
 		</div>
-
 		<form ng-submit="like();">
-			<div id="like-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider">
+			<div id="like-btn" class="hidden-xs col-sm-12 col-md-12 col-lg-12 slider">
+				<center><button type="submit" ></button></center>
+			</div>
+			<div id="like-btn2" class="col-xs-12 hidden-sm hidden-md hidden-lg slider">
 				<center><button type="submit" ></button></center>
 			</div>
 		</form>
