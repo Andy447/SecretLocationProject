@@ -114,7 +114,7 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 					initUser(user);
 				}
 			} else {
-				$scope.currentPhoto = "css/2.png";
+				$scope.currentPhoto = "images/nomorephotos.jpg";
 			}
 		
 		});
