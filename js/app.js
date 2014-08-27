@@ -97,8 +97,10 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 		userIndexObj.$loaded().then(function() {
 			var userIndex = userIndexObj.$value;
 			console.log(userIndex);
+			console.log("photoArray:", photoArray);
+			console.log("length:", photoArray.length);
 
-			//******handle exception if userIndex >=25
+			if (userIndex < photoArray.length) {
 				var photo = photoArray[userIndex];
 
 				$scope.currentPhoto = photo.$value;
@@ -114,7 +116,9 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 					ref.child(user.id).child('index').set(userIndex + 1);
 					initUser(user);
 				}
-			//*******end of exception handler
+			} else {
+				$scope.currentPhoto = "css/2.png";
+			}
 		
 		});
 		
@@ -148,6 +152,7 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 						time: $scope.newTime
 					};
 
+
 					bookingsRef.once('value', function(snapshot) {
 						//check for appointment conflict in between hours
 						if(!snapshot.hasChild($scope.newDate) || !snapshot.child($scope.newDate).hasChild($scope.newTime)) {
@@ -159,6 +164,14 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 							$scope.newPartySize = $scope.newDate = $scope.newTime = "";
 						}
 					});
+				}
+
+				
+				$scope.remove = function(time) {
+					var firebaseUrl = "https://secret-key-app.firebaseio.com/login/".concat(time.userId,"/bookings");
+					var userRef = new Firebase(firebaseUrl);
+					userRef.child(time.date).child(time.time).set(null);
+					bookingsRef.child(time.date).child(time.time).set(null);
 				}
 			});
 		});

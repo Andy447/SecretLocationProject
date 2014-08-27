@@ -257,7 +257,7 @@ footer button{
 }
 */
 
-#secretLocation-btn  button {
+.secretLocation-btn  button {
   background-color: #bfbfbf;
   color: #FFF;
   font-size: 12px;
@@ -274,7 +274,7 @@ footer button{
 }
 
 
-#secretLocation-btn button:hover {
+.secretLocation-btn button:hover {
   background-color: #00acc8;
 }
 
@@ -358,18 +358,23 @@ footer button{
 	border: 1px solid;
 }
 
+.deleteButton:hover {
+	background-color: #5e5e5e;
+	color: white;
+}
+
 .wishlistPhoto {
 	width: 150px;
 	height: 150px;
 }
 
 .albumWrapper {
-	display: inline-block;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .photoWrapper {
-	padding-bottom: 6%;
-	margin-bottom: 5%;
+	display: inline-block;
 }
 
 .slider {
@@ -378,6 +383,11 @@ footer button{
 	float: none;
 }
 
+.imageWrapper {
+	width: 150px;
+	height: 150px;
+	margin: 2px;
+}
 
 .galleryImage {
 	width: 100%;
