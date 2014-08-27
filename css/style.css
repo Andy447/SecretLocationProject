@@ -1,8 +1,8 @@
 .loginPage {
-    animation: fadein 5s;
-    -moz-animation: fadein 5s; /* Firefox */
-    -webkit-animation: fadein 5s; /* Safari and Chrome */
-    -o-animation: fadein 5s; /* Opera */
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
 }
 @keyframes fadein {
     from {
@@ -53,7 +53,7 @@
   margin-top: 25px; 
   margin-bottom: 10px; 
 }
-
+/* 
 .wallpapers{
 	width: 746px;
 	height: 800px;
@@ -63,7 +63,7 @@
     z-index: -1;
 	background-image: url('homescreen-narrow.png');
 	background-size: 100% 100%;
-}
+} */
 
 .wallpapers2{
 	width: 745px;
@@ -88,14 +88,14 @@
 }
 
 
-.wallpaperb2{
+.wallpaperb1{
 	width: 1280px;
-	height: 300px;
+	height: 800px;
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -1;
-	background-image: url('content-page-wide-background.png');
+	background-image: url('content-page-wide-background3.png');
 	background-size: 100% 100%;
 }
 
@@ -123,7 +123,12 @@ footer {
 	z-index: 99;
     border-top:solid; 
 	border-color:grey;
-	border-width: 1px; 
+	border-width: 2px; 
+}
+
+.spacerbox {
+	bottom: 0; 
+	background-color:Transparent; 
 }
 
 footer button{
@@ -251,8 +256,8 @@ footer button{
   font-family: "Arial", Helvetica, sans-serif; 
 }
 */
-/*
-button {
+
+#secretLocation-btn  button {
   background-color: #bfbfbf;
   color: #FFF;
   font-size: 12px;
@@ -269,10 +274,10 @@ button {
 }
 
 
-button:hover {
+#secretLocation-btn button:hover {
   background-color: #00acc8;
 }
-*/
+
 
 .inner-menubutton input[type="button"]:hover {
   background-color:  #bfbfbf;
@@ -295,7 +300,11 @@ button:hover {
 	position: relative; 
 }
 .maincontent{
-	background-image: url('content-widescreen2.png');
+	border-top: solid; 
+	border-color: #E8E8E8; 
+	border-width: 2px; 
+	margin-top: 7%;
+	/*background-image: url('content-widescreen2.png');*/
 	height: 65%;
 }
 
@@ -322,13 +331,17 @@ button:hover {
 	height: 70px;
 	width: 100%;
 	background-color: #FFFFFF; 
+	border-top: solid;
+	border-color: #E8E8E8; 
+	border-width: 2px;
 }
   
 #like-btn button{
+	margin-top: 10px; 
 	width: 70px; 
 	height: 70px; 
 	background-repeat: no-repeat;
-	background: url("like-icon.png");
+	background: url("like-icon2.png");
 	background-size: 70px 70px;
 	z-index: 100;
 	border: none; 
@@ -384,7 +397,37 @@ button:hover {
 	height: 100%;
 	background-color: transparent;
 	position: absolute;
+	border: none; 
 }
+
+.watermark{
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.watermark2{
+	margin-left: 20px;
+}
+
+.bannerWrap {
+	width: 100%;
+	height: 100px; 
+}
+
+h1 {
+	font-size: 15px; 
+	font-family: "Arial", Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight: 900; 
+}
+
+h2 {
+	font-size: 12px; 
+	font-family: "Arial", Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight: 900; 
+}
+
 
 
 
