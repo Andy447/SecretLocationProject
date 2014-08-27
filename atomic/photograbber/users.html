@@ -1,10 +1,21 @@
-<form ng-submit="back();">
-	<button type="submit">BACK</button>
-</form>
+<div class="navbar">
+	<form style="width: 150px;" ng-submit="back();" >
+		<button type="submit">HOME</button>
+	</form>
 
-<div ng-repeat="user in userArray">
-	<button>{{user.email}}</button>
-	<div class="photoBlock" ng-repeat="photo in user.favourites">
-		<img src={{photo}} />
+	<form style="width: 150px;" ng-submit="goAppointments();" >
+		<button type="submit">APPOINTMENTS</button>
+	</form>
+</div>
+<br/>
+
+<span class="col-lg-12"><input type="text" placeholder="Search user..." ng-model="searchText"></input></span>
+
+<div ng-repeat="user in userArray | filter:searchText">
+	<button class="userButton" ng-click="user.toggle = !user.toggle">{{user.email}}</button>
+	<div class="photoBlock" ng-repeat="photo in user.favourites" ng-show="user.toggle">
+		<div class="photoWrapper">		
+			<div class="galleryImage" style="background-image:url({{photo}})"></div>
+		</div>
 	</div>
 </div>

@@ -20,6 +20,7 @@ secretLocApp.config(function($routeProvider) {
 });
 
 secretLocApp.controller('usersController', function($scope, $firebase, $location) {
+
 	var ref = new Firebase("https://secret-key-app.firebaseio.com/login");
 	var userArray = $firebase(ref).$asArray();
 	userArray.$loaded().then(function() {
@@ -29,19 +30,33 @@ secretLocApp.controller('usersController', function($scope, $firebase, $location
 	$scope.back = function() {
 		$location.path('/');
 	}
+
+	$scope.goAppointments = function() {
+		$location.path('/appointments');
+	}
 });
 
 secretLocApp.controller('appointmentsController', function($scope, $firebase, $location) {
+
 	var ref = new Firebase("https://secret-key-app.firebaseio.com/allBookings");
 	var apptArray = $firebase(ref).$asArray();
 	apptArray.$loaded().then(function() {
 		$scope.apptArray = apptArray;
 
-		console.log(apptArray[0]);
+		$scope.remove = function(time) {
+			var firebaseUrl = "https://secret-key-app.firebaseio.com/login/".concat(time.userId,"/bookings");
+			var userRef = new Firebase(firebaseUrl);
+			userRef.child(time.date).child(time.time).set(null);
+			ref.child(time.date).child(time.time).set(null);
+		}
 	});
 
 	$scope.back = function() {
 		$location.path('/');
+	}
+
+	$scope.goUsers = function() {
+		$location.path('/users');
 	}
 });
 

@@ -23,14 +23,14 @@
 				</div>
 			</form>
 		</div>
-<!--		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
+		<div class=" col-sx-12 hidden-sm hidden-md hidden-lg slider" id="slider2" style="height: 317px; width: 317px;">
 			<form ng-submit="dislike();">
 				<div class="smallerImage" style="background-image:url({{currentPhoto}})">
 					<button class="nextButton" type="submit"></button>
 				</div>
 			</form>
 		</div>
--->		<form ng-submit="like();">
+		<form ng-submit="like();">
 			<div id="like-btn" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider">
 				<center><button type="submit" ></button></center>
 			</div>
@@ -62,7 +62,9 @@
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3">
 					<div class="inner-content">
 						<img src="images/time-icon.png" height="70" width="70">
-						Time:&nbsp<input type="time" ng-model="newTime"></input>
+						Time:&nbsp<select ng-model="newTime">
+							<option ng-repeat="time in times">{{time}}</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content3">
@@ -78,13 +80,15 @@
 				</div>
 			</form>
 
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="appt in userBookings">
-				Name: {{appt.name}}<br/>
-				Phone: {{appt.phone}}<br/>
-				Party Size: {{appt.partySize}}<br/>
-				Date: {{appt.date}}<br/>
-				Time: {{appt.time}}<br/>
-				<br/>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="date in userBookings">
+				<div ng-repeat="time in date">
+					Name: {{time.name}}<br/>
+					Phone: {{time.phone}}<br/>
+					Party Size: {{time.partySize}}<br/>
+					Date: {{time.date}}<br/>
+					Time: {{time.time}}<br/>
+					<br/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -102,8 +106,6 @@
 		</div>
 	</div>
 
-</body> 
-
 <footer>
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 content-btn">
 		<center><button class="main-btn" style="width: 100%" onclick="return show('Page1','Page2', 'Page3' , 'Page4', 'Page5');">gallery</button></center>
@@ -118,5 +120,7 @@
 		<center><form ng-submit="logout();"><button class="main-btn" style="width: 100%">logout</button></form></center>
 	</div>
 </footer>
+</body> 
+
 
 </html> 

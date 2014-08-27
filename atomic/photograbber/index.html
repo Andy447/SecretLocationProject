@@ -24,10 +24,10 @@
 		background-color: #bfbfbf;
 		color: #FFF;
 		font-size: 12px;
-		padding: 1px 30px 0 30px;
 		line-height: 31px;
 		border: 0;
 		text-transform: uppercase;
+		text-align: center;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
@@ -35,12 +35,25 @@
 		clear: both;
 		font-family: "Arial", Helvetica, sans-serif;
 		display: block;
-		margin: 20px 20px;
+		margin: 20px 30px;
 	}
 
-	img {
+	button:hover {
+	  background-color: #00acc8;
+	}
+
+	.photoWrapper {
 		width: 150px;
 		height: 150px;
+		margin: 2px;
+	}
+
+	.galleryImage {
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+		position: relative;
+		background-size: cover;
 	}
 
 	.photoBlock {
@@ -49,6 +62,34 @@
 	
 	.homeButtons {
 		margin: 20% auto;
+	}
+
+	.homeButtons button {
+		padding: 0 30px;
+	}
+
+	.navbar {
+		margin: 0 auto; 
+		width: 400px;
+	}
+
+	.navbar form {
+		float: left;
+	}
+
+	.navbar button {
+		margin: 20px auto;
+		width: 140px;
+	}
+
+	input {
+		margin: 20px 20px;	
+	}
+
+	.singleAppt {
+		color: #5e5e5e;
+		font-family: "Arial";
+
 	}
 	</style>
 </head>

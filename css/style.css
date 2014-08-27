@@ -335,13 +335,14 @@ button:hover {
 }
 
 .deleteButton {
-	font-color: black;
-	font-weight: bold;
+	background-color: white;
+	color: #5e5e5e;
 	float: right;
-	width: 20px !important;
-	height: 20px !important;
+	width: 21px !important;
+	height: 21px !important;
 	padding: 0;
-	border-radius: 50%;
+	border-radius: 30%;
+	border: 1px solid;
 }
 
 .wishlistPhoto {
@@ -359,7 +360,7 @@ button:hover {
 }
 
 .slider {
-	width: 39%;
+	width: 35%;
 	margin: 0 auto;
 	float: none;
 }
