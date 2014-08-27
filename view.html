@@ -127,6 +127,7 @@
 	<div id="Page3" class="maincontent" style="display:none">
 		<div class="loginPage">
 			<center><b><h1>My Wishlist</h1></b></center>
+			<div style="margin:20px auto;" ng-hide="userFavourites.length!==0">You have no items in your wishlist.</div>
 			<div class="photoWrapper" ng-repeat="photo in userFavourites">
 				<div class="imageWrapper">
 					<div class="galleryImage" style="background-image:url({{photo.$value}})">

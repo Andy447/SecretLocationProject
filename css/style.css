@@ -360,11 +360,31 @@ footer button{
 	border: none; 
 }
 
+#like-btn button:hover {
+	width: 70px; 
+	height: 70px; 
+	background-repeat: no-repeat;
+	background: url("like-hover-icon.png");
+	background-size: 70px 70px;
+	z-index: 100;
+	border: none; 
+}
+
 #like-btn2 button{
 	width: 120px; 
 	height: 120px; 
 	background-repeat: no-repeat;
 	background: url("like-icon2.png");
+	background-size: 120px 120px;
+	z-index: 100;
+	border: none; 
+}
+
+#like-btn2 button:hover {
+	width: 120px; 
+	height: 120px; 
+	background-repeat: no-repeat;
+	background: url("like-hover-icon.png");
 	background-size: 120px 120px;
 	z-index: 100;
 	border: none; 
