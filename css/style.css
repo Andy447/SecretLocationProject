@@ -1,8 +1,8 @@
 .loginPage {
-    animation: fadein 4s;
-    -moz-animation: fadein 4s; /* Firefox */
-    -webkit-animation: fadein 4s; /* Safari and Chrome */
-    -o-animation: fadein 4s; /* Opera */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
 @keyframes fadein {
     from {
@@ -66,14 +66,14 @@
 } */
 
 .wallpapers2{
-	width: 745px;
-	height: 549px;
+	width: 317px;
+	height: 474px;
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -1;
-	background-image: url('homescreen-narrow2.png');
-	background-size: 100% 100%;
+	background-image: url('homescreen-narrow4.png');
+	background-size:cover;
 }
 
 .wallpaperb{
@@ -117,7 +117,7 @@
 footer {
 	position: fixed;
 	bottom: 0; 
-	height: 10%;
+	height: 8%;
 	width: 100%;
 	background-color: #FFFFFF; 
 	z-index: 99;
@@ -302,10 +302,13 @@ footer button{
 .maincontent{
 	border-top: solid; 
 	border-color: #E8E8E8; 
-	border-width: 2px; 
+	border-width: 3px; 
+	padding-top: 12px; 
 	margin-top: 7%;
 	/*background-image: url('content-widescreen2.png');*/
 	height: 65%;
+	margin-left: 20px; 
+	margin-right: 20px;
 }
 
 .main-btn{
@@ -330,19 +333,39 @@ footer button{
 #like-btn {
 	height: 70px;
 	width: 100%;
-	background-color: #FFFFFF; 
+	background-color: Transparent; 
 	border-top: solid;
 	border-color: #E8E8E8; 
-	border-width: 2px;
+	border-width: 3px;
+	margin-top: 12px;
+}
+
+#like-btn2 {
+	height: 70px;
+	width: 100%;
+	background-color: Transparent; 
+	border-top: solid;
+	border-color: #E8E8E8; 
+	border-width: 3px;
+	margin-top: 10px;
 }
   
 #like-btn button{
-	margin-top: 10px; 
 	width: 70px; 
 	height: 70px; 
 	background-repeat: no-repeat;
 	background: url("like-icon2.png");
 	background-size: 70px 70px;
+	z-index: 100;
+	border: none; 
+}
+
+#like-btn2 button{
+	width: 120px; 
+	height: 120px; 
+	background-repeat: no-repeat;
+	background: url("like-icon2.png");
+	background-size: 120px 120px;
 	z-index: 100;
 	border: none; 
 }
@@ -381,6 +404,8 @@ footer button{
 	width: 35%;
 	margin: 0 auto;
 	float: none;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
 }
 
 .imageWrapper {
@@ -398,8 +423,8 @@ footer button{
 }
 
 .smallerImage {
-	width: 317px;
-	height: 317px;
+	width: 257px;
+	height: 257px;
 	background-size: cover;
 }
 
@@ -439,6 +464,34 @@ h2 {
 	font-weight: 900; 
 }
 
+/*IE9*/
+*::selection 
+{
+    background-color:transparent;
+} 
+*::-moz-selection
+{
+    background-color:transparent;
+}
+*
+{        
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}    
+input[type="text"], textarea, [contenteditable]
+{
+
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
 
 
 
