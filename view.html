@@ -127,14 +127,12 @@
 	<div id="Page3" class="maincontent" style="display:none">
 		<div class="loginPage">
 			<center><b><h1>My Wishlist</h1></b></center>
-			<div class="albumWrapper">
-				<div class="photoWrapper" ng-repeat="photo in userFavourites">
-					<div class="imageWrapper">
-						<div class="galleryImage" style="background-image:url({{photo.$value}})">
-							<form ng-submit="deletePhoto(photo);">
-								<button type="submit" class="deleteButton">X</button>
-							</form>
-						</div>
+			<div class="photoWrapper" ng-repeat="photo in userFavourites">
+				<div class="imageWrapper">
+					<div class="galleryImage" style="background-image:url({{photo.$value}})">
+						<form ng-submit="deletePhoto(photo);">
+							<button type="submit" class="deleteButton">X</button>
+						</form>
 					</div>
 				</div>
 			</div>

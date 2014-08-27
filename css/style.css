@@ -386,11 +386,6 @@ footer button{
 	color: white;
 }
 
-.albumWrapper {
-	margin-left: 30px;
-	margin-right: 30px;
-}
-
 .photoWrapper {
 	display: inline-block;
 }
@@ -404,8 +399,8 @@ footer button{
 }
 
 .imageWrapper {
-	width: 149px;
-	height: 149px;
+	width: 155px;
+	height: 155px;
 	margin: 2px;
 }
 
