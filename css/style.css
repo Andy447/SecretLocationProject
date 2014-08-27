@@ -180,8 +180,8 @@ footer button{
   height: 100%;
 }
 
-.superMargin{
-	margin-top: 6px; 
+#superMargin{
+	margin: 20px 15px;
 }
 
 .content-title {
@@ -363,11 +363,6 @@ footer button{
 	color: white;
 }
 
-.wishlistPhoto {
-	width: 150px;
-	height: 150px;
-}
-
 .albumWrapper {
 	margin-left: 30px;
 	margin-right: 30px;
@@ -384,8 +379,8 @@ footer button{
 }
 
 .imageWrapper {
-	width: 150px;
-	height: 150px;
+	width: 149px;
+	height: 149px;
 	margin: 2px;
 }
 

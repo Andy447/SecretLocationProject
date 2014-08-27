@@ -11,14 +11,14 @@
 
 <span class="col-lg-12">
 <div ng-repeat="date in apptArray">
-	<div class="singleAppt col-lg-4" ng-repeat="time in date" >
-		<b>DATE: {{time.date}}<br/>
-		TIME: {{time.time}}<br/></b>
+	<div class="singleAppt col-sm-6 col-md-4 col-lg-4" ng-repeat="time in date" >
+		<br/>
+		<b>{{time.date}} | {{time.time}}</b><br/>
 		Name: {{time.name}}<br/>
 		Phone: {{time.phone}}<br/>
 		Email: {{time.email}}<br/>
-		Party Size: {{time.partySize}}<br/>
-		<button type="submit" ng-click="remove(time)">Remove</button>
+		Party Size: {{time.partySize}}</br>
+		<button style="margin:2px 30px;" type="submit" ng-click="remove(time)">Cancel</button>
 	</div>
 </div>
 </span>

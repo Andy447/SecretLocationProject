@@ -92,19 +92,16 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 	});
 	
 	var initUser = function(user) {
-		console.log(user);
 		var userIndexObj = $firebase(ref.child(user.id).child('index')).$asObject();
 		userIndexObj.$loaded().then(function() {
 			var userIndex = userIndexObj.$value;
-			console.log(userIndex);
-			console.log("photoArray:", photoArray);
-			console.log("length:", photoArray.length);
+			console.log("User photo index: ", userIndex);
 
 			if (userIndex < photoArray.length) {
 				var photo = photoArray[userIndex];
 
 				$scope.currentPhoto = photo.$value;
-				console.log("current photo: ", $scope.currentPhoto);
+				console.log("Current photo: ", $scope.currentPhoto);
 
 				$scope.like = function() {
 					ref.child(user.id).child('favourites').child(photo.$id).set(photo.$value);
@@ -160,7 +157,7 @@ secretApp.controller('viewController', function($scope, $firebase, $firebaseSimp
 							bookingsRef.child($scope.newDate).child($scope.newTime).set(appointment);
 							$scope.newPartySize = $scope.newDate = $scope.newTime = "";
 						} else {
-							alert("Booking time conflict!");
+							alert("This time has already been reserved by someone else.");
 							$scope.newPartySize = $scope.newDate = $scope.newTime = "";
 						}
 					});

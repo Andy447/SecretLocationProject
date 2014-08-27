@@ -13,9 +13,11 @@
 
 <div ng-repeat="user in userArray | filter:searchText">
 	<button class="userButton" ng-click="user.toggle = !user.toggle">{{user.email}}</button>
-	<div class="photoBlock" ng-repeat="photo in user.favourites" ng-show="user.toggle">
-		<div class="photoWrapper">		
-			<div class="galleryImage" style="background-image:url({{photo}})"></div>
+	<div style="margin-left:20px;">
+		<div class="photoBlock" ng-repeat="photo in user.favourites" ng-show="user.toggle">
+			<div class="photoWrapper">		
+				<div class="galleryImage" style="background-image:url({{photo}})"></div>
+			</div>
 		</div>
 	</div>
 </div>
