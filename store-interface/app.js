@@ -25,6 +25,9 @@ secretLocApp.controller('usersController', function($scope, $firebase, $location
 	var userArray = $firebase(ref).$asArray();
 	userArray.$loaded().then(function() {
 		$scope.userArray = userArray;
+		for (var i=0; i < 20; i++) {
+			console.log(userArray[i].email, typeof userArray[i].favourites);
+		}
 	});
 
 	$scope.back = function() {

@@ -484,7 +484,8 @@ h2 {
     background-color:transparent;
 }
 *
-{        
+{   
+	outline: none;
     -webkit-user-select: none;
     -moz-user-select: -moz-none;
     /*IE10*/
